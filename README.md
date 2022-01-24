@@ -366,6 +366,21 @@ const wdi5 = require('wdi5')(await wdi5())
 The log level is set by the either in `wdio.conf.js` via `wdi5.logLevel` or
 by `(await wdi5()).getLogger().setLoglevel(level = {String} "error"| "verbose" | "silent")`
 
+## Docker
+
+Prerequisite is a working/ running docker environment.
+
+`docker-compose -f ./test/docker-compose.yaml build`
+`docker-compose -f ./test/docker-compose.yaml up`
+`docker-compose -f ./test/docker-compose.yaml down`
+
+Four container needed
+
+- Chrome (Image)
+- Selenium (Image)
+- Testenvironment ()
+- Application under test ()
+
 ## FAQ/hints
 
 `wdi5` tests itself with `wdi5` - see the `test/`- and `test/ui5-app/test/e2e/` directory for sample `wdio.conf.js`-files and sample tests.

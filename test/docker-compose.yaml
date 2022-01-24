@@ -8,11 +8,10 @@ version: '3'
 networks:
   wdi5:
     name: wdi5
-    external: true
 
 services:
   chrome:
-    image: selenium/node-chrome
+    image: selenium/node-chrome:4.1.1-20220121
     container_name: chrome
     shm_size: 2gb
     depends_on:
@@ -23,19 +22,16 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       # no video
       - START_XVFB=false
-      # - JAVA_OPTS=-Dwebdriver.chrome.whitelistedIps=
     networks:
       - wdi5
 
   selenium-hub:
-    image: selenium/hub
+    image: selenium/hub:4.1.1-20220121
     container_name: selenium-hub
     ports:
       - '4442:4442'
       - '4443:4443'
       - '4444:4444'
-    # environment:
-    # - JAVA_OPTS=-Dwebdriver.chrome.whitelistedIps
 
     networks:
       - wdi5

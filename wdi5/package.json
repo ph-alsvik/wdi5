@@ -32,6 +32,7 @@
     "@wdio/appium-service": "^7.16.6",
     "appium": "^1.22.1",
     "appium-chromedriver": "^4.27.4",
-    "electron-chromedriver": "^16.0.0"
+    "electron-chromedriver": "^16.0.0",
+    "appium-doctor": "^1.16.0"
   }
 }

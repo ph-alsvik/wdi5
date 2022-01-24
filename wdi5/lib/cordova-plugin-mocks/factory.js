@@ -226,7 +226,7 @@ module.exports = {
      * @return {*} result of the execution
      */
     async setPluginMockReponse(pluginName, response) {
-        const result = await his._context.executeAsync(
+        const result = await this._context.executeAsync(
             (pluginName, response, done) => {
                 window.wdi5.setPluginMockReponse(pluginName, response);
                 done();

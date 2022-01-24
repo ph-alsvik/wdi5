@@ -13,10 +13,9 @@
     "@wdio/local-runner": "^7.16.8",
     "@wdio/mocha-framework": "^7.16.6",
     "@wdio/spec-reporter": "^7.16.4",
-    "wdio-ui5-service": "^0.8.1",
-    "webdriverio": "^7.16.8",
     "soerver": "0.0.3",
     "wait-on": "^6.0.0",
-    "wdi5": "^0.7.0"
+    "wdio-ui5-service": "^0.8.1",
+    "webdriverio": "^7.16.8"
   }
 }
