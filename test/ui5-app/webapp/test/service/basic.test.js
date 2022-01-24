@@ -1,10 +1,8 @@
-const Main = require('./pageObjects/Main');
-
 describe('ui5 basic', () => {
     globalThis.viewName = 'test.Sample.view.Main';
 
     before(async () => {
-        await Main.open();
+        await browser.goTo('#/Main');
     });
 
     it('should have the right title', async () => {
@@ -13,6 +11,8 @@ describe('ui5 basic', () => {
     });
 
     it('should find a ui5 control class via .hasStyleClass', async () => {
+        await browser.$('#container-Sample---app').waitForDisplayed();
+
         // webdriver
         const className = 'myTestClass';
 

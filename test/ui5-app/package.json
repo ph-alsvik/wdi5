@@ -5,7 +5,7 @@
   "main": "webapp/index.html",
   "scripts": {
     "test": "wdio ./wdio-browser-docker.conf.js",
-    "start": "soerver -d ./webapp -p 8888 -x ./webapp/proxyrc.json"
+    "start": "soerver -d ./webapp -p 80 -x ./webapp/proxyrc.json"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "soerver": "0.0.3",
     "wait-on": "^6.0.0",
     "wdio-ui5-service": "^0.8.1",
-    "webdriverio": "^7.16.8"
+    "webdriverio": "^7.16.8",
+    "@wdio/cli": "^7.16.8"
   }
 }

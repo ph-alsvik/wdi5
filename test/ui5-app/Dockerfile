@@ -13,6 +13,6 @@ COPY package.json package.json
 
 RUN npm install
 
-EXPOSE 8888
+EXPOSE 80
 
 CMD npm start

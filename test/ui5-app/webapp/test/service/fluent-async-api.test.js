@@ -1,5 +1,3 @@
-const Other = require('../e2e/pageObjects/Other');
-
 const listSelector = {
     // forceSelect: true,
     selector: {
@@ -12,7 +10,7 @@ const tests = [{api: 'asControl'}, {api: '_asControl'}];
 
 describe('async api', () => {
     before(async () => {
-        await Other.open();
+        await browser.goTo('#/Other');
     });
 
     for (const test of tests) {

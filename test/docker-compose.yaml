@@ -11,6 +11,7 @@ networks:
 
 services:
   chrome:
+    restart: always
     image: selenium/node-chrome:4.1.1-20220121
     container_name: chrome
     shm_size: 2gb
@@ -22,17 +23,20 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       # no video
       - START_XVFB=false
+      - JAVA_OPTS=-Dwebdriver.chrome.whitelistedIps=
     networks:
       - wdi5
 
   selenium-hub:
+    restart: always
     image: selenium/hub:4.1.1-20220121
     container_name: selenium-hub
     ports:
       - '4442:4442'
       - '4443:4443'
       - '4444:4444'
-
+    environment:
+      - JAVA_OPTS=-Dwebdriver.chrome.whitelistedIps=
     networks:
       - wdi5
 
@@ -42,18 +46,19 @@ services:
     container_name: wdi5
     volumes:
       - ./wdio-browser-docker.conf.js:/app/wdio-browser-docker.conf.js
+      - ./ui5-app/webapp/test/service/basic.test.js:/app/webapp/test/service/basic.test.js
     depends_on:
       - selenium-hub
       - chrome
-      - app
+      - test-app
     networks:
       - wdi5
 
-  app:
+  test-app:
     build: ./ui5-app
-    image: app
-    container_name: app
+    image: test-app
+    container_name: test-app
     ports:
-      - '8888:8888'
+      - '80:80'
     networks:
       - wdi5

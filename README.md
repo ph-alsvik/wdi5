@@ -370,7 +370,7 @@ by `(await wdi5()).getLogger().setLoglevel(level = {String} "error"| "verbose" |
 
 Prerequisite is a working/ running docker environment.
 
-`docker-compose -f ./test/docker-compose.yaml build`
+`docker-compose -f ./test/docker-compose.yaml build` (optional, will be excecuted first time by `up`)
 `docker-compose -f ./test/docker-compose.yaml up`
 `docker-compose -f ./test/docker-compose.yaml down`
 

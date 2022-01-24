@@ -2,7 +2,7 @@ const path = require('path');
 
 exports.config = {
     // TODO: change to real wdi5 tests
-    specs: [path.join('test', 'e2e', 'service', '*.test.js')],
+    specs: [path.join('test', 'service', 'basic.test.js')],
     hostname: 'selenium-hub', // tests running inside the container should connect to the same network
     port: 4444,
     path: '/wd/hub',
@@ -15,16 +15,16 @@ exports.config = {
             'goog:chromeOptions': {
                 w3c: false,
                 args: [
-                    '--headless'
-                    // '--disable-web-security',
-                    // '--no-sandbox',
-                    // '--privileged',
-                    // '--disable-dev-shm-usage',
-                    // '--disable-gpu',
-                    // '--whitelisted-ips="selenium-hub"',
-                    // '--verbose',
-                    // '--ignore-certificate-errors',
-                    // '--allow-insecure-localhost'
+                    '--headless',
+                    '--disable-web-security',
+                    '--no-sandbox',
+                    '--privileged',
+                    '--disable-dev-shm-usage',
+                    '--disable-gpu',
+                    '--whitelisted-ips="selenium-hub"',
+                    '--verbose',
+                    '--ignore-certificate-errors',
+                    '--allow-insecure-localhost'
                 ]
             }
         }
@@ -32,7 +32,7 @@ exports.config = {
     wdi5: {
         // path: "", // commented out to use the default paths
         screenshotPath: path.join('test', 'report', 'screenshots'),
-        logLevel: 'verbose', // error | verbose | silent
+        logLevel: 'error', // error | verbose | silent
         platform: 'browser', // electron, browser, android, ios
         url: 'index.html',
         deviceType: 'web'
@@ -42,7 +42,7 @@ exports.config = {
     logLevels: {
         webdriver: 'error'
     },
-    baseUrl: 'http://app:8888/',
+    baseUrl: 'http://test-app/',
     bail: 0,
     waitforTimeout: 10000,
     connectionRetryTimeout: 60000,
