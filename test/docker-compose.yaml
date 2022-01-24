@@ -8,6 +8,7 @@ version: '3'
 networks:
   wdi5:
     name: wdi5
+    external: true
 
 services:
   chrome:
@@ -22,6 +23,7 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       # no video
       - START_XVFB=false
+      # - JAVA_OPTS=-Dwebdriver.chrome.whitelistedIps=
     networks:
       - wdi5
 
@@ -32,10 +34,14 @@ services:
       - '4442:4442'
       - '4443:4443'
       - '4444:4444'
+    # environment:
+    # - JAVA_OPTS=-Dwebdriver.chrome.whitelistedIps
+
     networks:
       - wdi5
 
   wdi5:
+    build: .
     image: wdi5
     container_name: wdi5
     volumes:
@@ -48,6 +54,7 @@ services:
       - wdi5
 
   app:
+    build: ./ui5-app
     image: app
     container_name: app
     ports:

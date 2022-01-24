@@ -8,8 +8,8 @@ RUN apk update \
 WORKDIR /app
 
 # COPY . .
-COPY test/ui5-app/webapp webapp
-COPY test/ui5-app/package.json package.json
+COPY webapp webapp
+COPY package.json package.json
 
 RUN npm install
 

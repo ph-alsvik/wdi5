@@ -9,9 +9,9 @@ RUN apk update \
 WORKDIR /app
 
 # COPY all to root
-COPY test/ui5-app/webapp/test test
-COPY test/ui5-app/package.json package.json
-COPY test/wdio-browser-docker.conf.js wdio-browser-docker.conf.js
+COPY ui5-app/webapp/test test
+COPY ui5-app/package.json package.json
+COPY wdio-browser-docker.conf.js wdio-browser-docker.conf.js
 
 RUN npm install
 
