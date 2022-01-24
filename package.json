@@ -8,7 +8,6 @@
     "node": ">=12"
   },
   "scripts": {
-    "test:docker": "wdio ./test/wdio-browser-docker.conf.js",
     "test:1.60": "run-p -r _startApp  _test:1.60",
     "_test:1.60": "wdio test/wdio-wdi5-ui5-1.60.33.conf.js",
     "test": "run-p -r _startApp _test",
@@ -89,19 +88,24 @@
     "appium-doctor": "^1.16.0",
     "browserstack": "^1.6.1",
     "browserstack-local": "^1.4.8",
-    "chromedriver": "^97.0.0",
     "cordova": "^10.0.0",
     "fs-extra": "^10.0.0",
     "git-cz": "^4.8.0",
     "husky": "^7.0.4",
+    "dotenv": "^10.0.0",
     "lerna": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
     "replace-in-file": "^6.3.2",
     "soerver": "0.0.3",
     "wait-on": "^6.0.0",
-    "wd": "^1.14.0",
+    "@wdio/cli": "^7.16.8",
+    "@wdio/local-runner": "^7.16.8",
+    "@wdio/mocha-framework": "^7.16.6",
+    "chromedriver": "97.0.0",
+    "@wdio/spec-reporter": "^7.16.4",
     "wdio-chromedriver-service": "^7.2.2",
-    "wdio-docker-service": "^3.2.0"
+    "wdio-ui5-service": "^0.8.1",
+    "webdriverio": "^7.16.8"
   }
 }
