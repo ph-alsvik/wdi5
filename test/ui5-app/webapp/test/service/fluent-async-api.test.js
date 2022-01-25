@@ -11,6 +11,14 @@ const tests = [{api: 'asControl'}, {api: '_asControl'}];
 describe('async api', () => {
     before(async () => {
         await browser.goTo('#/Other');
+        /* const buttonSelector = {
+            selector: {
+                id: 'NavFwdButton',
+                viewName: 'test.Sample.view.Main'
+            }
+        };
+
+        await browser.asControl(buttonSelector).firePress(); */
     });
 
     for (const test of tests) {

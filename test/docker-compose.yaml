@@ -8,6 +8,7 @@ version: '3'
 networks:
   wdi5:
     name: wdi5
+    external: true
 
 services:
   chrome:
@@ -44,9 +45,13 @@ services:
     build: .
     image: wdi5
     container_name: wdi5
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+
     volumes:
       - ./wdio-browser-docker.conf.js:/app/wdio-browser-docker.conf.js
-      - ./ui5-app/webapp/test/service/basic.test.js:/app/webapp/test/service/basic.test.js
+      - ./ui5-app/webapp/test/service/basic.test.js:/app/test/service/basic.test.js
+      - ./ui5-app/webapp/test/service/fluent-async-api.test.js:/app/test/service/fluent-async-api.test.js
     depends_on:
       - selenium-hub
       - chrome

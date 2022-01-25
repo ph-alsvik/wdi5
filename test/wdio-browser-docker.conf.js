@@ -2,7 +2,7 @@ const path = require('path');
 
 exports.config = {
     // TODO: change to real wdi5 tests
-    specs: [path.join('test', 'service', 'basic.test.js')],
+    specs: [path.join('test', 'service', '*.test.js')],
     hostname: 'selenium-hub', // tests running inside the container should connect to the same network
     port: 4444,
     path: '/wd/hub',
@@ -34,7 +34,7 @@ exports.config = {
         screenshotPath: path.join('test', 'report', 'screenshots'),
         logLevel: 'error', // error | verbose | silent
         platform: 'browser', // electron, browser, android, ios
-        url: 'index.html',
+        url: '',
         deviceType: 'web'
     },
     services: ['ui5'],
