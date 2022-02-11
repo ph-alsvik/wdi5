@@ -23,5 +23,18 @@
   },
   "engines": {
     "node": ">=14"
+  },
+  "scripts": {
+    "test:docker": "wdio wdio-ui5-docker.conf.js"
+  },
+  "devDependencies": {
+    "chromedriver": "^97.0.4",
+    "@wdio/cli": "^7.16.8",
+    "@wdio/local-runner": "^7.16.8",
+    "@wdio/mocha-framework": "^7.16.6",
+    "@wdio/spec-reporter": "^7.16.4",
+    "wdio-ui5-service": "^0.8.1",
+    "webdriverio": "^7.16.8",
+    "wdio-chromedriver-service": "^7.2.6"
   }
 }
