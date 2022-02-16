@@ -11,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Runs wdio-service tests against openui5 page
     steps:
+      - uses: actions/checkout@v2
       - name: execute tests
         id: execute
-        uses: ./.github/actions/docker-test-action
+        uses: ./.github/actions/docker-test
       # Use the output from the `execute` step
       - name: result
         run: echo "The result was ${{ steps.execute.outputs.code }}"
