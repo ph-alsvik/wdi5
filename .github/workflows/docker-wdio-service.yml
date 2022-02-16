@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: execute tests
         id: execute
-        uses: actions/docker-test-action
+        uses: ./.github/actions/docker-test-action
       # Use the output from the `execute` step
       - name: result
         run: echo "The result was ${{ steps.execute.outputs.code }}"
