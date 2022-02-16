@@ -1,10 +1,10 @@
 name: 'docker wdio-service tests'
 
-on: workflow_dispatch
-#   pull_request:
-#     branches: [develop]
-#   push:
-#     branches: [develop]
+on: # workflow_dispatch
+  #   pull_request:
+  #     branches: [develop]
+  push:
+    branches: [feature/docker]
 
 jobs:
   wdio_service_tests:
