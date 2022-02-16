@@ -16,7 +16,7 @@ jobs:
 
       - name: execute tests
         id: execute
-        uses: ./wdio-ui5-service/test
+        uses: ./
       # Use the output from the `execute` step
       - name: result
         run: echo "The result was ${{ steps.execute.outputs.code }}"
