@@ -1,0 +1,19 @@
+name: 'docker wdio-service tests'
+
+# on:
+#   pull_request:
+#     branches: [develop]
+#   push:
+#     branches: [develop]
+
+jobs:
+  wdio_service_tests:
+    runs-on: ubuntu-latest
+    name: Runs wdio-service tests against openui5 page
+    steps:
+      - name: execute tests
+        id: execute
+        uses: actions/docker-test-action
+      # Use the output from the `execute` step
+      - name: result
+        run: echo "The result was ${{ steps.execute.outputs.code }}"

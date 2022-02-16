@@ -1,0 +1,8 @@
+# action.yml
+name: 'docker wdio-service action'
+outputs:
+  code: # id of output
+    description: ''
+runs:
+  using: 'docker'
+  image: './wdio-ui5-service/test/Dockerfile'
