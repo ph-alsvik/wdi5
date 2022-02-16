@@ -5,4 +5,4 @@ outputs:
     description: ''
 runs:
   using: 'docker'
-  image: './wdio-ui5-service/test/Dockerfile'
+  image: '../../../wdio-ui5-service/test/Dockerfile'
