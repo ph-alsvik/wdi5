@@ -26,7 +26,7 @@
     "test:android:bs": "wdio ./test/wdio-bs-android.conf.js",
     "test:ios:bs": "wdio ./test/wdio-bs-ios.conf.js",
     "test:ios": "run-p -r _startApp:ios _testWT:ios",
-    "test:docker": "npx wdio wdio-ui5-docker.conf.js",
+    "test:docker": "wdio wdio-ui5-docker.conf.js",
     "test:android": "run-p -r _startApp:android _test:android",
     "//test:electron": "first link the correct chromedriver binary, then start it and run the tests",
     "test:electron": "npm-run-all _link_cd --parallel _startApp:electron _testWT:electron",
